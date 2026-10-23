@@ -159,6 +159,7 @@ for kk in range(Nrows):
     print()
 
 
+
 print('Parallelogram with a nested loop')
 
 Ncols = 5
