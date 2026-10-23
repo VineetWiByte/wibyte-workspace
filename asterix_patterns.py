@@ -52,12 +52,34 @@ for kk in range(Nrows):
 
 
 input()
-print('Diamond')
+print('1-2-3 Diamond')
 for kk in range(Nrows):
     if kk <= 2: 
         print(' '*(2 - kk) + '* '*(kk+1))
     else: 
         print(' '*(kk-2) + '* '*(Nrows- kk))
+
+
+input()
+print('1-3-5 Diamond')
+for kk in range(Nrows):
+    if kk <= 2: 
+        print(' '*(2 - kk) + '*'*(2*kk+1))
+    else: 
+        print(' '*(kk-2) + '*'*(9- 2*kk))
+
+
+
+input()
+print('Hollow 1-3-5 Diamond')
+for kk in range(Nrows):
+    if kk <= 2: 
+        print(' '*(2 - kk) + '*'*(2*kk+1))
+    else: 
+        print(' '*(kk-2) + '*'*(9- 2*kk))
+
+
+
 
 
 
@@ -118,7 +140,7 @@ for kk in range(Nrows):
 
 
 input()
-print('Hollow Diamond')
+print('Hollow 1-2-3 Diamond')
 for kk in range(Nrows):
     if kk <= 1: 
         print(' '*(2 - kk) + '* '*(kk+1))
@@ -126,6 +148,79 @@ for kk in range(Nrows):
         print(' '*(2 - kk) + '* ' + ' '*2 + '*')
     else: 
         print(' '*(kk-2) + '* '*(Nrows- kk))
+
+print('Square with a nested loop')
+
+Ncols = 5
+
+for kk in range(Nrows):
+    for jj in range(Ncols): 
+        print('*', end = '')
+    print()
+
+
+print('Parallelogram with a nested loop')
+
+Ncols = 5
+
+for kk in range(Nrows):
+    for jj in range(kk): 
+        print(' ', end = '')
+    for jj in range(5):
+        print('*', end = '')
+    print()
+
+input()
+print('1-3-5 Diamond with a nested loop')
+Ncols = 5
+for kk in range(Nrows):
+    for jj in range(Ncols): 
+        if kk <= 2: 
+            if jj < 2 - kk or jj > 2 + kk: 
+                print(' ', end = '')
+            else: 
+                #print(kk, jj)
+                print('*', end = '')
+        else: 
+            if jj < kk - 1 or jj > 7 - kk: 
+                print(' ', end = '')
+            else: 
+                print('*', end = '')
+    print()        
+
+
+
+input()
+print('1-3-5 Diamond with a nested loop (scanning)')
+Ncols = 5
+
+for kk in range(Nrows):
+    if kk <= 2: 
+        for jj in range(2-kk): 
+            print(' ', end = '')
+        for jj in range(2*kk+1): 
+            print('*', end = '')
+    else: 
+        for jj in range(kk-2): 
+            print(' ', end = '')
+        for jj in range(9 - 2*kk): 
+            print('*', end = '')
+    print()
+
+
+input()
+print('Hollow 1-3-5 Diamond with a nested loop (x/y coordinate)')
+
+Ncols = 5
+
+for kk in range(Nrows):
+    for jj in range(Ncols): 
+        if kk ==  jj or kk == 4-jj: 
+            print('*', end = '')
+        else: 
+            print(' ', end = '')
+    print()
+    
 
 
 
