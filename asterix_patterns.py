@@ -79,14 +79,27 @@ for kk in range(Nrows):
 
 
 # Hollow Rectangle (Right Aligned)
-print()
+print('Hollow Rectangle')
 input()
+
 
 for kk in range(Nrows):
     if kk == 0 or kk == 4:
         print('*'*5)
     else:
         print('*' + ' ' * 3 + '*')
+
+
+# Hollow Rectangle (Right Aligned)
+print('Hollow Parallelogram')
+input()
+
+
+for kk in range(Nrows):
+    if kk == 0 or kk == 4:
+        print(' ' * kk + '*'*5)
+    else:
+        print(' ' * kk + '*' + ' '*3 + '*')
 
 
 
@@ -103,8 +116,16 @@ for kk in range(Nrows):
     print(' '*(kk) + '*'*(Nrows-kk))
 
 
-# Square with Gaps
+
+input()
+print('Hollow Diamond')
 for kk in range(Nrows):
-    print('* '*Nrows)
+    if kk <= 1: 
+        print(' '*(2 - kk) + '* '*(kk+1))
+    elif kk == 2: 
+        print(' '*(2 - kk) + '* ' + ' '*2 + '*')
+    else: 
+        print(' '*(kk-2) + '* '*(Nrows- kk))
+
 
 
