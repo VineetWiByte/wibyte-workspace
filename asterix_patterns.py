@@ -1,22 +1,21 @@
 Nrows = 5
 
-# Basic Pattern
+print('Basic Rectangle Pattern')
+print()
 for kk in range(Nrows):
     print('*'*Nrows)
 
-print()
-input()
 
-# Left aligned triangle
-print()
 input()
+print('Last aligned Triangle')
 for kk in range(Nrows):
     print('*'*(kk+1))
 
-# Left aligned Inverted triangle
-print()
 input()
 
+
+# Left aligned Inverted triangle
+print('Left Aligned Inverted Triangle')
 for kk in range(Nrows):
     print('*'*(Nrows-kk))
 
@@ -24,6 +23,7 @@ for kk in range(Nrows):
 print()
 input()
 
+print('Right Aligned Triangle')
 for kk in range(Nrows):
     print(' '*(Nrows-kk) + '*'*(kk+1))
 
