@@ -25,12 +25,45 @@ input()
 
 print('Right Aligned Triangle')
 for kk in range(Nrows):
-    print(' '*(Nrows-kk) + '*'*(kk+1))
+    print(' '*(Nrows-kk-1) + '*'*(kk+1))
+
+input()
+print('Right Aligned Inverted Triangle')
+for kk in range(Nrows):
+    print(' '*kk + '*'*(Nrows-kk))
+
+
+input()
+print('Left Aligned triangle')
+for kk in range(Nrows):
+    if kk <= 2: 
+        print('*'*(kk+1))
+    else: 
+        print('*'*(Nrows- kk))
+
+
+input()
+print('Right Aligned triangle')
+for kk in range(Nrows):
+    if kk <= 2: 
+        print(' '*(2 - kk) + '*'*(kk+1))
+    else: 
+        print(' '*(kk-2) + '*'*(Nrows- kk))
+
+
+input()
+print('Diamond')
+for kk in range(Nrows):
+    if kk <= 2: 
+        print(' '*(2 - kk) + '* '*(kk+1))
+    else: 
+        print(' '*(kk-2) + '* '*(Nrows- kk))
+
 
 
 
 # Filled Parallelogram
-print()
+print('Left Aligned Parallelogram')
 input()
 
 for kk in range(Nrows):
