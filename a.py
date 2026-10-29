@@ -20,3 +20,16 @@ res = [x for x, prime in enumerate ]
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
