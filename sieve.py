@@ -19,8 +19,45 @@ def eratosthenes_sieve(N):
     res = [x for x, prime in enumerate(is_prime) if prime]
     return res
 
-base_primes = eratosthenes_sieve(32000)
-print(base_primes, len(base_primes))
+#print(base_primes, len(base_primes))
+
+N = 10000
+sgt = 1
+sgt_size = 100
+total_sgts = int(N/sgt_size)
+
+base_primes = eratosthenes_sieve(100)
+new_primes = []
+
+
+for sgt_num in range(1, total_sgts+1): 
+    numbers = [x for x in range(sgt_num*sgt_size+1,(sgt_num+1)*sgt_size+1, 1)]
+    primes = [True]*sgt_size
+    for p in base_primes:
+        if p*p <= numbers[-1]:
+            tgt = numbers[0] + (p - numbers[0]%p)%p
+            idx = numbers.index(tgt)
+
+            for jj in range(idx, sgt_size, p):
+                primes[jj] = False
+
+    sgt_primes = [numbers[jj] for jj, is_prime in enumerate(primes) if is_prime]
+    print(sgt_primes)
+    input()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
