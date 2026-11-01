@@ -6,6 +6,7 @@ t = turtle.Turtle()
 t.shape('square')
 t.color('black')
 
+
 ts = t.screen
 ts.bgcolor('khaki')
 
