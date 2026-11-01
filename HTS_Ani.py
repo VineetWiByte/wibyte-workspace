@@ -3,6 +3,7 @@ import time
 import random
 import math
 
+
 # create snake and screen
 t = turtle.Turtle()
 t_auto = turtle.Turtle()
