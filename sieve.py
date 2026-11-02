@@ -1,4 +1,12 @@
-N = 100
+N = 32000
+
+import math
+
+def is_prime(N): 
+    for k in range(2, int(math.sqrt(N))+1): 
+        if N % k == 0: 
+            return False
+    return True
 
 def eratosthenes_sieve(N): 
     # Return ALL primes from 0 to N. 
@@ -21,15 +29,52 @@ def eratosthenes_sieve(N):
 
 #print(base_primes, len(base_primes))
 
-N = 10000
-sgt = 1
-sgt_size = 100
-total_sgts = int(N/sgt_size)
+N = 32000
 
-base_primes = eratosthenes_sieve(100)
-new_primes = []
+base_primes = eratosthenes_sieve(N)
+#new_primes = []
+R = 1000000000
+L = 950000000
+
+# numbers = [x for x in range(L, R+1, 1)]
+sgt_size = R - L + 1; 
+primes = [True]*(sgt_size)
+
+print(len(base_primes))
+print(sgt_size)
+
+input()
+for p in base_primes:
+ 
+  # Create the sieve
+  if p*p <= R:
+    start_num = L + (p - L%p)%p      
+    start_idx = start_num - L
+    
+    n_multiples = (R - start_num)//p + 1
+    
+    print(start_idx, n_multiples)
+
+    
+    marks = [False]*n_multiples
+    primes[start_idx: : p] = marks
+    #input()
+      
+sgt_primes = [jj+L for jj, is_prime in enumerate(primes) if is_prime]
 
 
+#for b in base_primes: 
+#    if not is_prime(b): 
+#        print(b)
+
+#for s in sgt_primes: 
+#    if not is_prime(s): 
+#        print(s)
+
+
+
+
+'''
 for sgt_num in range(1, total_sgts+1): 
     numbers = [x for x in range(sgt_num*sgt_size+1,(sgt_num+1)*sgt_size+1, 1)]
     primes = [True]*sgt_size
@@ -45,7 +90,7 @@ for sgt_num in range(1, total_sgts+1):
     print(sgt_primes)
     input()
 
-
+'''
 
 
 
@@ -102,7 +147,7 @@ for sgt_num in range(1, total_sgts+1):
 
 
 
-
+'''
 
 input()
 
@@ -139,4 +184,4 @@ input()
 #    hit_by[k] = []
 #           times_hit[jj]+=1
 #            hit_by[jj].append(p)
- 
+''' 
