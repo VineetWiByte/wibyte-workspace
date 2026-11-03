@@ -1,13 +1,3 @@
-N = 32000
-
-import math
-
-def is_prime(N): 
-    for k in range(2, int(math.sqrt(N))+1): 
-        if N % k == 0: 
-            return False
-    return True
-
 def eratosthenes_sieve(N): 
     # Return ALL primes from 0 to N. 
     is_prime = [True]*(N+1)
@@ -40,10 +30,7 @@ L = 950000000
 sgt_size = R - L + 1; 
 primes = [True]*(sgt_size)
 
-print(len(base_primes))
-print(sgt_size)
 
-input()
 for p in base_primes:
  
   # Create the sieve
@@ -53,14 +40,19 @@ for p in base_primes:
     
     n_multiples = (R - start_num)//p + 1
     
-    print(start_idx, n_multiples)
+    #print(start_idx, n_multiples)
 
     
     marks = [False]*n_multiples
     primes[start_idx: : p] = marks
     #input()
       
-# sgt_primes = [jj+L for jj, is_prime in enumerate(primes) if is_prime]
+#sgt_primes = [jj+L for jj, is_prime in enumerate(primes) if is_prime]
+
+print(sum(primes))
+smallest = primes.index(True) + L
+largest = R - primes[::-1].index(True) 
+print(smallest, largest)
 
 
 #for b in base_primes: 
