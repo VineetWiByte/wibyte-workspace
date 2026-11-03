@@ -60,7 +60,7 @@ for p in base_primes:
     primes[start_idx: : p] = marks
     #input()
       
-sgt_primes = [jj+L for jj, is_prime in enumerate(primes) if is_prime]
+# sgt_primes = [jj+L for jj, is_prime in enumerate(primes) if is_prime]
 
 
 #for b in base_primes: 
