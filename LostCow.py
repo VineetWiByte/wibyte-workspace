@@ -9,7 +9,10 @@ done = False
 dist, itn = 0, 0; 
 
 
-d_vec = [10*2**i for i in range(12)]
+d_vec = [10 + 1000*i for i in range(20)]
+d_vec = [10, 50, 100, 300, 500, 1000, 2000, 3000, 5000, 8000, 10000, 13000, 15000, 20000]
+
+d_vec = [13000, 16000]
 
 for d in d_vec: 
     y = x + d
