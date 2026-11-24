@@ -1,13 +1,15 @@
 import random
-N = 100
+import time
 
-L = random.sample(range(1, N+1), 5)
-L = random.choices(range(1, N+1), k=110)
+Nmax = 100
+N = 110; 
+L = random.choices(range(1, Nmax+1), k=N)
 
 # Finding first duplicate (NAIVE, nested loop)
+
 found = False
-for kk in range(len(L)):
-    for jj in range(kk+1, len(L), 1): 
+for kk in range(N):
+    for jj in range(kk+1, N, 1): 
         if L[kk] == L[jj]:
             found = True
             break
@@ -19,7 +21,7 @@ print(kk, jj, L[kk])
 
 
 seen = set()
-for kk in range(len(L)):
+for kk in range(N):
     if L[kk] in seen:
         break
     else: 
