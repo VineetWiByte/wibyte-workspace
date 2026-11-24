@@ -22,3 +22,7 @@ seen = set()
 for kk in range(len(L)):
     if L[kk] in seen:
         break
+    else: 
+        seen.add(L[kk])
+
+print(kk, L[kk])
